@@ -1,0 +1,21 @@
+import cv2
+import numpy as np
+
+img = cv2.imread("../image/lenna.png")
+def assign(img,outshape):
+    height, width, channels = img.shape
+    NewImage = np.zeros((outshape[0], outshape[1], channels))
+    HRate, WRate = outshape[0] / height, outshape[1] / width
+
+    for i in range(outshape[0]):
+        for j in range(outshape[1]):
+            x = int(i / HRate)
+            y = int(j / WRate)
+            NewImage[i,j] = img[x,y] / 255
+    return NewImage
+
+
+new = assign(img,(650,650))
+cv2.imshow("nearest interp",new)
+cv2.imshow("image",img)
+cv2.waitKey(0)

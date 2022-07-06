@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from skimage.color import rgb2gray
 
-filePath = '/filehome/PythonProjects/badou-project/84-谢保成-武汉/第二周/p1.png'
+filePath = '/84-谢保成-武汉/image/p1.png'
 # ============================灰度化===========================================
 '''
 1.源码实现灰度化
